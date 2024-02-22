@@ -64,10 +64,46 @@ CIRCUIT DIAGRAM
 8.	Upload the program and check for the physical working. 
 9.	Ensure safety before powering up the device 
 
+## CIRCUIT:
+![image](https://github.com/Ragu-123/EXPERIMENT-NO--03-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/113915622/30cafcff-16a8-4973-bd23-87ab1b6e8c77)
 
+## SCHEMATIC DIAGRAM
+![image](https://github.com/Ragu-123/EXPERIMENT-NO--03-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/113915622/2735520b-e5a4-40ee-9045-c17280c61ee3)
 
 **PROGRAM** 
- 
+ ```
+// C++ code
+//
+
+int led=4;
+int sensorpot;
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  sensorpot=analogRead(A0);
+  Serial.print("data=");
+  Serial.println(sensorpot);
+  delay(50);
+  if(sensorpot>500)
+  {
+    digitalWrite(led,HIGH);
+      delay(100);
+    digitalWrite(led,LOW);
+      delay(100);
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+      delay(100);
+  }
+}
+```
 
 
 
@@ -75,11 +111,12 @@ CIRCUIT DIAGRAM
 
 
 
-
-
-**
 **Simulation output:** 
-**
+## SERIAL MONITOR:
+![image](https://github.com/Ragu-123/EXPERIMENT-NO--03-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/113915622/278f41c6-dad8-46af-9f2b-031205d05a5b)
+
+
+
 
 
 [My image](username.github.com/repository/img/image.jpg)
@@ -90,4 +127,5 @@ CIRCUIT DIAGRAM
 
 
 
-**RESULT: ** Arduino uno analog input functioning is learned and interfaced with digital input switch .
+## RESULT: 
+Arduino uno analog input functioning is learned and interfaced with digital input switch .
